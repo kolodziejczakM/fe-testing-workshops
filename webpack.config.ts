@@ -15,7 +15,7 @@ const config: webpack.Configuration = {
         exclude: /node_modules/,
       },
     ],
-  },gi
+  },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },

@@ -1,6 +1,9 @@
 import { getFullName } from './user';
 
+// Things to mention:
 // TEST CASE PHASES: https://medium.com/plain-and-simple/arrange-act-assert-vs-given-when-then-c22da421bf75
+// TEST CASE NESTING: https://kentcdodds.com/blog/avoid-nesting-when-youre-testing
+/////
 
 // FIRST STRUCTURAL OPTION - nesting
 
