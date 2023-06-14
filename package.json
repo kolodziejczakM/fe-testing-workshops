@@ -4,9 +4,10 @@
   "description": "",
   "main": "dist/bundle.js",
   "scripts": {
+    "start": "webpack serve --mode development",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
     "test": "jest",
-    "test-one-by-one": "pnpm test -- --runInBand",
-    "start": "webpack serve --mode development"
+    "test-one-by-one": "pnpm test -- --runInBand"
   },
   "keywords": [],
   "author": "Marcin Kołodziejczak",

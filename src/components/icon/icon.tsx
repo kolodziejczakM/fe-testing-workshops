@@ -11,6 +11,7 @@ export const Icon: FC<IconProps> = ({ name }: IconProps) => {
     [
       name === 'check-circle-fill',
       <svg
+        key="0"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"
         width="16"
@@ -22,6 +23,7 @@ export const Icon: FC<IconProps> = ({ name }: IconProps) => {
     [
       name === 'alert-fill',
       <svg
+        key="1"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"
         width="16"
@@ -33,6 +35,7 @@ export const Icon: FC<IconProps> = ({ name }: IconProps) => {
     [
       name === 'feed-heart',
       <svg
+        key="2"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"
         width="16"
