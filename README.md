@@ -10,6 +10,11 @@ Repository that helps me in presenting: good practices, risks, popular mistakes 
 
 `pnpm test`
 
+## VSCode extensions
+
+GOOD: `Jest Runner`, `Jest Snippets`
+VERY BAD, avoid: `Jest` (makes VSC very slow)
+
 ## Structure:
 
 - src
@@ -44,6 +49,11 @@ Some json (jsonc) files (e.g. `tsconfig.json`) allow comments but you can't easi
 Initial config && dependencies added automatically via `npx eslint --init`.
 
 Config file as `.js` to make adding comments possible.
+
+There are two eslint plugins just for testing purposes:
+
+- `eslint-plugin-jest` - e.g. to avoid duplicating test case description, to enforce using one syntax for test cases (it vs test). See rules: https://github.com/jest-community/eslint-plugin-jest#rules
+- `eslint-plugin-testing-library` - e.g. to enforce best practices according to library authors. See rules: https://github.com/testing-library/eslint-plugin-testing-library#supported-rules
 
 ### TypeScript reset
 

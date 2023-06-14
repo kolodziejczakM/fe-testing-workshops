@@ -51,7 +51,7 @@ describe('user', () => {
 
 // SECOND STRUCTURAL OPTION - no nesting
 
-test('should return the full name when both first name and last name are provided', () => {
+it('should return the full name when both first name and last name are provided', () => {
   const firstName = 'John';
   const lastName = 'Doe';
   const expected = 'John Doe';
@@ -61,7 +61,7 @@ test('should return the full name when both first name and last name are provide
   expect(actual).toBe(expected);
 });
 
-test('should return the first name when only the first name is provided', () => {
+it('should return the first name when only the first name is provided', () => {
   const firstName = 'John';
   const expected = 'John';
 
@@ -70,7 +70,7 @@ test('should return the first name when only the first name is provided', () => 
   expect(actual).toBe(expected);
 });
 
-test('should return the last name when only the last name is provided', () => {
+it('should return the last name when only the last name is provided', () => {
   const lastName = 'Doe';
   const expected = 'Doe';
 
@@ -79,7 +79,7 @@ test('should return the last name when only the last name is provided', () => {
   expect(actual).toBe(expected);
 });
 
-test('should return an empty string when no name is provided', () => {
+it('should return an empty string when no name is provided', () => {
   const expected = '';
 
   const actual = getFullName();
@@ -89,7 +89,7 @@ test('should return an empty string when no name is provided', () => {
 
 // THIRD STRUCTURAL OPTION - TABLE DRIVEN TESTS
 
-describe('user', () => {
+describe('user - table driven test', () => {
   describe('getFullName', () => {
     const testCases = [
       { input: ['John', 'Doe'], output: 'John Doe' },
