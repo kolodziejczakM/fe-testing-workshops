@@ -12,8 +12,8 @@ Repository that helps me in presenting: good practices, risks, popular mistakes 
 
 ## VSCode extensions
 
-GOOD: `Jest Runner`, `Jest Snippets`
-VERY BAD, avoid: `Jest` (makes VSC very slow)
+- GOOD: `Jest Runner`, `Jest Snippets`
+- AVOID: `Jest` (makes VSC very slow)
 
 ## Structure:
 
@@ -62,6 +62,11 @@ If you wondering what's `reset.d.ts` then see: https://github.com/total-typescri
 ### TypeScript config
 
 Based on `@tsconfig/strictest` - https://github.com/tsconfig/bases
+
+## Articles
+https://medium.com/plain-and-simple/arrange-act-assert-vs-given-when-then-c22da421bf75
+https://kentcdodds.com/blog/common-mistakes-with-react-testing-library#using-waitfor-to-wait-for-elements-that-can-be-queried-with-find
+https://kentcdodds.com/blog/avoid-nesting-when-youre-testing
 
 ## FAQ
 
