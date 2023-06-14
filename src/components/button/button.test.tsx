@@ -44,6 +44,7 @@ describe('Button', () => {
     await user.click(screen.getByRole('button'));
 
     expect(onClick).toHaveBeenCalledTimes(1); //? Why not .toHaveBeenCalled()? - It's better to check how many calls were made instead of checking if it was called at all. Similarly to using getByRole - we checking two things at once.
+    // https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/prefer-called-with.md
   });
 });
 

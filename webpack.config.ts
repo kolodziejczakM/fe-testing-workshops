@@ -13,6 +13,10 @@ const config: webpack.Configuration = {
         use: 'ts-loader', // Why not babel-loader? See: README.md
         exclude: /node_modules/,
       },
+      {
+        test: /\.(jpeg)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   resolve: {
