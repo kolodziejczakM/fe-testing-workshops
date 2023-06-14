@@ -36,6 +36,8 @@ https://jestjs.io/docs/configuration
 ### Prettier
 
 Config file as `.js` to make adding comments possible.
+Regular json files (e.g. `package.json`) don't allow comments.
+Some json (jsonc) files (e.g. `tsconfig.json`) allow comments but you can't easily recognize them thus using just `.js` is better.
 
 ### ESLint
 
