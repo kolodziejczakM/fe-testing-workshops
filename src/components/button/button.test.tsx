@@ -3,12 +3,14 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import identity from 'lodash/identity';
 import { Button } from '@components/button';
+import { IconName } from '@components/icon';
+import { customScreen } from '@utils/testing/customScreen';
 
 // Because this component has different component inside - it can be verified via unit test or integration test
 // *** as unit test *** //
-describe('Button', () => {
+describe('Button - UNIT', () => {
   // GOOD ENOUGH
-  it('has "button" attribute', async () => {
+  it('has "button" attribute', () => {
     render(<Button onClick={identity} text="Button text" />);
 
     expect(screen.getByRole('button')).toHaveAttribute('type', 'button');
@@ -49,5 +51,36 @@ describe('Button', () => {
 });
 
 // *** hybrid - using custom assertions *** //
+
+describe('Button - HYBRID', () => {
+  // the same as in UNIT and:
+
+  const props = {
+    onClick: identity,
+    text: 'Button text',
+  };
+
+  it('has "button" attribute', () => {
+    render(<Button {...props} />);
+
+    expect(screen.getByRole('button')).toHaveAttribute('type', 'button');
+  });
+
+  describe('when iconName prop is provided', () => {
+    const withIconProps = {
+      ...props,
+      iconName: 'alert-fill' as IconName,
+    };
+
+    // NOTE: we didn't check if the icon is not rendered by default - focusing only on success (on render) scenario is a popular mistake
+    it('renders proper icon', async () => {
+      render(<Button {...withIconProps} />);
+
+      expect(
+        customScreen.getAllIconsByName(withIconProps.iconName)
+      ).toHaveLength(1);
+    });
+  });
+});
 
 // *** as integration test *** //

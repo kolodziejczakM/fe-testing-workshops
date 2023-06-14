@@ -47,7 +47,7 @@ export const Icon: FC<IconProps> = ({ name }: IconProps) => {
   ]);
 
   return (
-    <span aria-hidden="true" style={{ marginInline: 10 }}>
+    <span aria-hidden="true" data-icon-name={name} style={{ marginInline: 10 }}>
       {iconsMap.get(true)}
     </span>
   );
