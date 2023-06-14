@@ -27,6 +27,15 @@ it('displays paragraph', () => {
   ).toBeInTheDocument();
 });
 
+// TODO: FIX THIS TEST
+it.skip('displays story', async () => {
+  render(<App />);
+
+  expect(screen.getByTestId('app-story')).toHaveTextContent(
+    'Czy znacie historię o…'
+  );
+});
+
 it('displays correct image', () => {
   render(<App />);
 

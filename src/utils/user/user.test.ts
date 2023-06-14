@@ -90,7 +90,15 @@ it('should return an empty string when no name is provided', () => {
 // THIRD STRUCTURAL OPTION - TABLE DRIVEN TESTS
 
 describe('user - table driven test', () => {
+  beforeEach(() => {
+    // console.log('outer beforeEach called!');
+  });
+
   describe('getFullName', () => {
+    beforeEach(() => {
+      // console.log('inner beforeEach called!');
+    });
+
     const testCases = [
       { input: ['John', 'Doe'], output: 'John Doe' },
       { input: ['John'], output: 'John' },
@@ -103,6 +111,7 @@ describe('user - table driven test', () => {
       const ouputDesc = output === '' ? 'EMPTY STRING' : output;
 
       it(`for given arguments: ${inputDesc} it returns: ${ouputDesc}`, () => {
+        //  console.log('test case called');
         expect(getFullName(...input)).toBe(output);
       });
     });

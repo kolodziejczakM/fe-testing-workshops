@@ -34,6 +34,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  shave:
+    specifier: ^5.0.2
+    version: 5.0.2
   ts-loader:
     specifier: ^9.4.3
     version: 9.4.3(typescript@5.1.3)(webpack@5.86.0)
@@ -4876,6 +4879,10 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       kind-of: 6.0.3
+
+  /shave@5.0.2:
+    resolution: {integrity: sha512-WNNGhtWrFumzDDJiCcpWAUMqfGP1WcX2gBQ1VEd2qiiezFvI0RNjc5mOF7xQU/DFJy2YQIK2j1xgZdOgUl+Png==}
+    dev: false
 
   /shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
