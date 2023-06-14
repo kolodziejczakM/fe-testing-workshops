@@ -1,17 +1,15 @@
 import * as path from 'path';
 import webpack from 'webpack';
-// in case you run into any typescript error when configuring `devServer`
-import 'webpack-dev-server';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
+// this is minimalistic config only for dev/test environment just to KISS
 const config: webpack.Configuration = {
   entry: './src/index.tsx',
-  devtool: 'inline-source-map',
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: 'ts-loader', // Why not babel-loader? See: README.md
         exclude: /node_modules/,
       },
     ],
@@ -24,10 +22,6 @@ const config: webpack.Configuration = {
       template: path.join(__dirname, 'public', 'index.html'),
     }),
   ],
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-  },
 };
 
 export default config;

@@ -2,6 +2,14 @@
 
 Repository that helps me in presenting: good practices, risks, popular mistakes and proper configuration.
 
+## To start dev server
+
+`pnpm start` -> go to http://localhost:8080/
+
+## To start tests
+
+`pnpm test`
+
 ## Structure:
 
 - src
@@ -16,7 +24,7 @@ Repository that helps me in presenting: good practices, risks, popular mistakes 
 
 ## Important files
 
-- `jest.config.ts` - initialized with `npx ts-jest config:init`, changed to `.ts` as shown here (https://jestjs.io/docs/configuration) and changed `testEnvironment` to `jsdom`
+- `jest.config.ts` - initialized with `npx ts-jest config:init`, changed to `.ts` as shown here (https://jestjs.io/docs/configuration) and changed `testEnvironment` to `jsdom` (it was default back then, now it's not default but should be used when testing browser environment)
   (see possibilities: https://jestjs.io/docs/configuration#testenvironment-string)
 - `jest.setup.js`
 
