@@ -1,6 +1,8 @@
 {
   "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
+    "rootDir": "./",
+    "baseUrl": "./src",
     "outDir": "./dist",
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
@@ -9,7 +11,11 @@
     "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@utils/*": ["utils/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {

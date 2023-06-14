@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Icon, IconName } from '../icon/icon';
+import { Icon, IconName } from '@components/icon';
 
 type ButtonProps = {
   onClick: () => void;

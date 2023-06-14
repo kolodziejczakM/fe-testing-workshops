@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import identity from 'lodash/identity';
-import { Button } from './button';
+import { Button } from '@components/button';
 
 // Because this component has different component inside - it can be verified via unit test or integration test
 // *** as unit test *** //
