@@ -8,13 +8,13 @@ export const getFullName = (firstName = '', lastName = ''): string => {
 };
 
 export const getUserName = ({
-  isAdmin,
+  isAdmin = false,
   firstName = '',
   lastName = '',
 }: {
   firstName?: string;
   lastName?: string;
-  isAdmin: boolean;
-}): string => {
+  isAdmin?: boolean;
+} = {}): string => {
   return isAdmin ? formatAdminName('Admin') : getFullName(firstName, lastName);
 };

@@ -1,4 +1,10 @@
-import { getFullName } from './user';
+import * as userUtils from './user';
+
+// const getFullNameMock = jest.fn();
+// jest.mock('./user', () => ({
+//   ...jest.requireActual('./user'),
+//   getFullName: () => getFullNameMock(),
+// }));
 
 // Things to mention:
 // TEST CASE PHASES: https://medium.com/plain-and-simple/arrange-act-assert-vs-given-when-then-c22da421bf75
@@ -16,7 +22,7 @@ describe('user', () => {
       const lastName = 'Doe';
       const expected = 'John Doe';
 
-      const actual = getFullName(firstName, lastName);
+      const actual = userUtils.getFullName(firstName, lastName);
 
       expect(actual).toBe(expected);
     });
@@ -25,7 +31,7 @@ describe('user', () => {
       const firstName = 'John';
       const expected = 'John';
 
-      const actual = getFullName(firstName);
+      const actual = userUtils.getFullName(firstName);
 
       expect(actual).toBe(expected);
     });
@@ -34,7 +40,7 @@ describe('user', () => {
       const lastName = 'Doe';
       const expected = 'Doe';
 
-      const actual = getFullName(undefined, lastName);
+      const actual = userUtils.getFullName(undefined, lastName);
 
       expect(actual).toBe(expected);
     });
@@ -42,9 +48,21 @@ describe('user', () => {
     it('should return an empty string when no name is provided', () => {
       const expected = '';
 
-      const actual = getFullName();
+      const actual = userUtils.getFullName();
 
       expect(actual).toBe(expected);
+    });
+  });
+
+  describe('getUserName', () => {
+    it('calls getFullName once', () => {
+      jest.spyOn(userUtils, 'getFullName');
+
+      userUtils.getUserName();
+
+      // Won't work in all envs. It depends on how the module is transformed (e.g. ts-jest vs babel-jest)
+      expect(userUtils.getFullName).toHaveBeenCalledTimes(1);
+      expect(userUtils.getFullName).toHaveBeenCalledWith('', '');
     });
   });
 });
@@ -56,7 +74,7 @@ it('should return the full name when both first name and last name are provided'
   const lastName = 'Doe';
   const expected = 'John Doe';
 
-  const actual = getFullName(firstName, lastName);
+  const actual = userUtils.getFullName(firstName, lastName);
 
   expect(actual).toBe(expected);
 });
@@ -65,7 +83,7 @@ it('should return the first name when only the first name is provided', () => {
   const firstName = 'John';
   const expected = 'John';
 
-  const actual = getFullName(firstName);
+  const actual = userUtils.getFullName(firstName);
 
   expect(actual).toBe(expected);
 });
@@ -74,7 +92,7 @@ it('should return the last name when only the last name is provided', () => {
   const lastName = 'Doe';
   const expected = 'Doe';
 
-  const actual = getFullName(undefined, lastName);
+  const actual = userUtils.getFullName(undefined, lastName);
 
   expect(actual).toBe(expected);
 });
@@ -82,7 +100,7 @@ it('should return the last name when only the last name is provided', () => {
 it('should return an empty string when no name is provided', () => {
   const expected = '';
 
-  const actual = getFullName();
+  const actual = userUtils.getFullName();
 
   expect(actual).toBe(expected);
 });
@@ -112,7 +130,7 @@ describe('user - table driven test', () => {
 
       it(`for given arguments: ${inputDesc} it returns: ${ouputDesc}`, () => {
         //  console.log('test case called');
-        expect(getFullName(...input)).toBe(output);
+        expect(userUtils.getFullName(...input)).toBe(output);
       });
     });
   });
